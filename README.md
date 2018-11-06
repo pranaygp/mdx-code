@@ -21,12 +21,13 @@ console.log('Hello world');
 ```
 ````
 
+![1](https://user-images.githubusercontent.com/1797812/48085109-03968780-e1bf-11e8-8943-3eb821dfde1b.gif)
+
 ### Preambles
 
 A slide can have two code blocks. The first code block is run before the second, but the playground only displays the second.
 
 ````mdx
----
 export default Code
 
 ```
@@ -36,6 +37,8 @@ const x = [1, 2, 3];
 x.map(i => i*2);
 ```
 ````
+
+![2](https://user-images.githubusercontent.com/1797812/48085110-042f1e00-e1bf-11e8-9a49-9fd7535fe290.gif)
 
 # Authors
 
