@@ -7,23 +7,23 @@ const Code = scriptLoader("https://embed.runkit.com")(
     isScriptLoaded ? (
       <Embed style={{ width: "100vw" }} nodeVersion="10" {...rest} />
     ) : (
-      <h1>Loading</h1>
+      <h3>Loading</h3>
     )
 );
 
 export default ({ children }) => {
-  const [pre, code] = React.Children.toArray(children.props.children);
+  const [pre, code] = React.Children.toArray(children);
   let title;
   let component;
   if (code) {
     const [preamble, source] = [pre, code].map(
       c => c.props.children.props.children
     );
-    title = code.props.children.props.props.metaString;
+    title = code.props.children.props.metastring;
     component = <Code source={source} preamble={preamble} title={title} />;
   } else {
     const source = pre.props.children.props.children;
-    title = pre.props.children.props.props.metaString;
+    title = pre.props.children.props.metastring;
     component = <Code source={source} title={title} />;
   }
   return (

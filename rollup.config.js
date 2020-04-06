@@ -3,10 +3,12 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 
 export default {
-  entry: "index.js",
-  dest: "main.js",
-  format: "cjs",
-  sourceMap: "inline",
+  input: "index.js",
+  output: {
+    file: "main.js",
+    sourcemap: "inline",
+    format: "cjs"
+  },
   plugins: [
     babel({
       exclude: "node_modules/**"

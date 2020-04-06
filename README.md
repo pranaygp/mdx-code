@@ -14,11 +14,15 @@ import Code from 'mdx-code';
 # Regular Slide
 
 ---
-export default Code
 
-```javascript A playground slide!
+<Code>
+
+```js A playground slide!
 console.log('Hello world');
 ```
+
+</Code>
+
 ````
 
 ![1](https://user-images.githubusercontent.com/1797812/48085109-03968780-e1bf-11e8-8943-3eb821dfde1b.gif)
@@ -28,14 +32,16 @@ console.log('Hello world');
 A slide can have two code blocks. The first code block is run before the second, but the playground only displays the second.
 
 ````mdx
-export default Code
+<Code>
 
-```
+```js
 const x = [1, 2, 3];
 ```
-```javascript x is already defined
+```js x is already defined
 x.map(i => i*2);
 ```
+
+</Code>
 ````
 
 ![2](https://user-images.githubusercontent.com/1797812/48085110-042f1e00-e1bf-11e8-9a49-9fd7535fe290.gif)
