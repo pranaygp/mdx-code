@@ -46,6 +46,27 @@ x.map(i => i*2);
 
 ![2](https://user-images.githubusercontent.com/1797812/48085110-042f1e00-e1bf-11e8-9a49-9fd7535fe290.gif)
 
+### Configurable nodeVersion
+
+You can configure the `nodeVersion` to use by passing it as a prop to the `Code` component.
+
+````mdx
+import Code from 'mdx-code';
+
+# Regular Slide
+
+---
+
+<Code nodeVersion="13">
+
+```js A playground slide!
+console.log('Hello world');
+```
+
+</Code>
+
+````
+
 # Authors
 
 * Pranay Prakash ([@pranaygp](https://twitter.com/pranaygp))
