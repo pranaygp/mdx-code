@@ -5,13 +5,13 @@ import scriptLoader from "react-async-script-loader";
 const Code = scriptLoader("https://embed.runkit.com")(
   ({ isScriptLoaded, ...rest }) =>
     isScriptLoaded ? (
-      <Embed style={{ width: "100vw" }} nodeVersion="10" {...rest} />
+      <Embed style={{ width: "100vw" }} {...rest} />
     ) : (
       <h3>Loading</h3>
     )
 );
 
-export default ({ children }) => {
+export default ({ nodeVersion = 10, children }) => {
   const [pre, code] = React.Children.toArray(children);
   let title;
   let component;
@@ -20,11 +20,11 @@ export default ({ children }) => {
       c => c.props.children.props.children
     );
     title = code.props.children.props.metastring;
-    component = <Code source={source} preamble={preamble} title={title} />;
+    component = <Code source={source} preamble={preamble} title={title} nodeVersion={nodeVersion} />;
   } else {
     const source = pre.props.children.props.children;
     title = pre.props.children.props.metastring;
-    component = <Code source={source} title={title} />;
+    component = <Code source={source} title={title} nodeVersion={nodeVersion} />;
   }
   return (
     <div
